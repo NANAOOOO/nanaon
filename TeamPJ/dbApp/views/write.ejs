@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Monaco Editor - Text Form Example</title>
+    <!-- Load the Monaco Editor library -->
+
+    <script src="https://unpkg.com/monaco-editor@0.27.0/min/vs/loader.js"></script>
+    <script>
+      // ここに実行後のコードを入れる
+      
+      // Monaco Editorに組み込まれたJavaScriptファイルおよびモジュールを組み込むRequireを利用する
+      // Monaco Editor scriptsより先にここがコールされる必要がある
+      // Monaco Editor
+      require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@0.27.0/min/vs' } });
+      // Load the Monaco Editor scripts
+      require(['vs/editor/editor.main'], function() {
+        const editorElement = document.getElementById('editor');
+          window.editor = monaco.editor.create(editorElement, {
+          value: '',
+          language: 'javascript'
+        })
+      });
+
+      const judgeForm = document.getElementById("judge-form");
+      const result = document.getElementById("result");
+      const body = document.getElementsByTagName("body")[0];
+
+function displayResults(x) {
+  result.innerHTML = "";
+  console.log("ここは動いてる？");
+  create(x);
+}
+async function pushButton() {
+  const Value = window.editor.getValue();
+  console.log(Value);
+  editorValue =  Value;
+  const data = await fetch(
+    `http://localhost:3000/judge/${editorValue}`
+  ).then(res => res.json());
+
+  console.log("サーバーからレスポンス返ってきたよ");
+  const ele = data["judgeresult"];
+  displayResults(ele);
+  return data;
+}
+
+</script>
+</head>
+<body>
+        <!-- <form id="form1" name="form1" method="post" target = "judged"> -->
+          <div class="input">
+            <label for="editor">Code:</label>
+            <div id="editor" name = "editor" style="height: 300px;"></div>
+            <br>        
+          <button type="submit" id="HTMLbutton" class="judge-button">
+            <div id="judge-button" onclick="pushButton()">
+              <img src="https://i.ibb.co/SN1SDhM/typing-fast-typing.gif" />
+            </div>
+          </button>  
+         </div>
+        <!-- </form>  -->
+    <h3>結果</h3>
+    <div id="result" class = "judged">
+    </div>
+</body>
+</html>
+
+  <!-- Create the text form element -->
+<!-- まりもさん -->
+      <!-- <form action="search" method="GET" id="code-form" class="code-form"> 
+        <label for="editor">Code:</label>
+        <div id="editor" name = "editor" style="height: 300px;"></div>
+        <br>
+        <div>
+          <button type="submit" id="button" class="search-button">
+            <div id="text-button" onclick="pushButton()">
+              <img src="https://i.ibb.co/SN1SDhM/typing-fast-typing.gif" />
+            </div>
+          </button>
+        </div>
+        </form>  -->

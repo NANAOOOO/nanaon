@@ -1,0 +1,21 @@
+body {
+  background-color: #e7a146;
+  padding: 0;
+}
+
+h2 {
+  margin-top: 20px;
+}
+.board {
+  background-color: #e7e7eb;
+  margin: 10px 40px;
+  padding: 20px;
+}
+
+.comment-box {
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+}

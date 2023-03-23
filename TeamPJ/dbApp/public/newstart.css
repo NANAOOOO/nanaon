@@ -1,0 +1,58 @@
+/* タイムライン画面全体 */
+.container-fluid{
+    font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+/* ブランド*/
+.navbar > .container-fluid > .navbar-brand{
+    color: rgb(2, 70, 200);
+    font-size: 24px;
+ }
+ /* ハンバーガーメニューのリンク真ん中に/ 問題：リンクの色を薄くしたいが反映されない */
+ .nav-link{
+     text-align: center; 
+ }
+ 
+ 
+ /* ハンバーグバーのリンクの色指定できない？？ */
+ /* .navbar > .container-fluid > .nav-link{
+     color:rgb(2, 70, 200);
+ } */
+ 
+h2, h4, h5{
+    font-family: 'BIZ UDPGothic', sans-serif; 
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+h4 span {
+    color: rgb(255, 111, 0);
+}
+
+
+/* 改善：ボタンを押すと全部消えるのなおす */
+.d-grid > .btn{
+    background-color: rgb(255, 223, 153);
+    font-family: 'BIZ UDPGothic', sans-serif;
+    color: rgb(80, 80, 80);
+    border: 2px solid rgb(255, 174, 0);
+  margin-top: 20px;
+  margin-bottom: 20px;
+ }
+
+.container > .from-group > label{
+    font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+.col{
+   margin: 0 auto;
+}
+
+.new{
+    background-color: rgb(238, 238, 238);
+    border-radius: 20px;
+    padding: 60px 60px;
+    text-align: center;
+}

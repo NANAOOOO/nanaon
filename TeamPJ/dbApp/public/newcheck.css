@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'BIZ UDPGothic', sans-serif;
+    color: #0d122b;
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .language{
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+
+  .language > input{
+    font-size: 18px;
+    text-align: center;
+    font-family: 'BIZ UDPGothic', sans-serif;
+  }
+
+  ::placeholder {
+    color: rgb(200, 200, 200);
+  }
+ 
+  main {
+    flex-grow: 2;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding:20px 20px;
+    height: 200px;
+    text-align: center;
+    border:1px solid  rgb(200, 200, 200) ;
+    
+  }
+  
+  .mainBotton{
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .start, .stop {
+    font-size: 18px;
+    font-weight: 400;
+  
+    width: 100px;
+    background: transparent;
+    border: 3px solid  rgb(255, 174, 0);
+    border-radius: 15px;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    color: rgb(203, 161, 46);
+   
+  }
+  .mainBotton > .start:hover, .stop:hover,
+  .mainBotton > .start:focus, .stop:focus {
+    background:rgb(255, 223, 153);
+    color: rgb(80, 80, 80) ;
+  }
+  
+  a {
+    color: #0d122b;
+  }
+  .error {
+    color: rgb(255, 223, 153);
+    text-align: center;
+  }
+  footer {
+    border-top: 1px solid #0d122b;
+    text-align: center;
+  }
+
+  .d-grid > .btn{
+    background-color: rgb(255, 223, 153);
+    font-family: 'BIZ UDPGothic', sans-serif;
+    color: rgb(80, 80, 80);
+    border: 2px solid rgb(255, 174, 0);
+    margin-top: 30px;
+ }
+ 
+  /* タイムライン画面全体 */
+.container-fluid{
+    font-family: 'BIZ UDPGothic', sans-serif;
+    margin:0;padding:0
+}
+
+.container > .row > .col > .container{
+    border: 2px solid rgb(180, 180, 180);
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+.commentForm > .form-group > .form-control{
+  border:1px solid  rgb(200, 200, 200) ;
+  border-radius: 30px;
+}
+
+/* ブランド*/
+.navbar > .container-fluid > .navbar-brand{
+    color: rgb(2, 70, 200);
+    font-size: 24px;
+ }
+ /* ハンバーガーメニューのリンク真ん中に/ 問題：リンクの色を薄くしたいが反映されない */
+ .nav-link{
+     text-align: center; 
+ }
+ 
+ h2{
+    font-family: 'BIZ UDPGothic', sans-serif;
+ 
+ }
+
+
+/* 問題文〜ボタンまでのクラス部分 */
+.table-body > li{
+  margin-top: 30px;
+  padding-top: 16px;
+  border: 2px solid rgb(222, 222, 222);
+  border-radius: 15px;
+ 
+}
+
+
+.question, .input1, .output1{
+  font-family: 'BIZ UDPGothic', sans-serif;
+  color: rgb(80, 80, 80);
+  font-size: 16px;
+  text-align: center;
+  
+}
+
+/* ここら辺怪しい */
+ul{
+  padding-right: 32px;
+}
+
+.memo-space{
+  border-radius: 20px;
+  height: 200px;
+  border:1px solid  rgb(200, 200, 200) ;
+  padding-left: 32px;
+  padding-right: 25px;
+}
+
+.memo-space2{
+  border-radius: 20px;
+  height: 200px;
+  border:1px solid  rgb(200, 200, 200) ;
+  padding-left: 32px;
+  padding-right: 25px;
+}
+
+
+ /* 画面共有できなかった版 */
+ /* これ画面共有版にもかかってる。意外といいかもだからどっちかに決まったら入れるか判断 */
+

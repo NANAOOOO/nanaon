@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>コード画面</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../static/newcode.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- これはなんだ -->
+      <script defer src="../static/ahowComments.js"></script>
+
+      <!-- editer.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+      <link rel="stylesheet" href="../public/code.css">
+
+    </head>
+
+
+
+    <body>
+
+
+       <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+          <!-- ブランドロゴ -->
+          <div class="container-fluid">
+             <span class="navbar-brand mb-0 h1" href="question.ejs" >PRODUCTNAME</span>
+       
+               <!-- アイコン部分 -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!--ハンバーガーメニュー  -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                   <div class="navbar-nav ms-auto">
+                     <a class="nav-link" aria-current="page" href="">Home</a>
+                     <a class="nav-link" href="question.ejs">問題画面</a>
+                     <a class="nav-link" href="show.ejs">投稿一覧</a>
+                    </div>
+                 </div>
+     
+          </div>
+       </nav>
+
+
+      <!-- 空白部分：消さないでください！-->
+       <div class="p-4 bg-white">
+       </div>
+
+        <!-- 問題部分 -->
+        <ul class="table-body">
+
+           <li style="list-style: none;">
+              <div class="table">
+                <div class="question" name="？？？">問題文</div>
+              </div>
+            </li>
+
+         </ul>
+
+
+
+       <!-- 言語記入部分 -->
+       <div class="language" name="language">
+          <input type = "text" placeholder="言語入力欄">
+       </div>
+
+
+       <!-- レスポンシブのグリッド："container" "row" "col"は消さないでください！ -->
+       <div class="container">
+
+        <div class="row">
+
+          <div class="col">
+
+            <div class ="container mt-3">
+              <h2>コード入力</h2>
+              <!-- コード記入欄 -->
+              <form action="/create" method="post" class="commentForm">
+
+                <div><iframe  class= "frame_center" src="https://widgets.judge0.com/" width="600" height="900"></iframe> </div>
+                
+            
+              </form>
+            </div>
+          </div>
+
+
+          <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+              
+
+            <!-- 入出力部分 -->
+      
+             <div class="col" >
+                
+                <ul class="table-body">
+                  <h2>入力例</h2>
+                  <li style="list-style: none;">
+                     <div class="table">
+                       <div class="question" name="？？？">入力例</div>
+                     </div>
+                   </li>
+       
+                </ul>
+             
+                <ul class="table-body">
+                  <h2>出力例</h2>
+                  <li style="list-style: none;">
+                     <div class="table">
+                       <div class="question" name="？？？">出力例</div>
+                     </div>
+                   </li>
+                </ul>
+                
+                 <!-- 改善：ボタンの位置はならかすのと大きく -->
+                   <ul class="table-body-botton">
+                    <h2>音声録画</h2>
+                    <h5>始めるまえに「start」終わるときに「stop」を押してください。</h5>
+                    <!-- ボタン部分：以下3つのclass消さないでください！ -->
+                    <li style="list-style: none;">
+                    <div class="mainBotton">
+                      <button id="start-btn"  class="start">start</button>
+                      <button id="stop-btn"class="stop">stop</button>
+                    </li>
+                </ul>
+              </div>
+         
+
+   
+               <div class ="container mt-5">
+                  <h2>音声出力欄</h2>
+
+                   <!-- 音声出力部分 -->
+                    <main>
+                       <div id="result-div"></div>
+                    </main>
+
+                    <!-- ボタン部分：以下3つのclass消さないでください！ -->
+                    <div class="mainBotton">
+                    <button id="start-btn"  class="start">start</button>
+                    <button id="stop-btn"class="stop">stop</button>
+                </div>
+               </div>
+
+
+               
+          <div class ="container mt-5">
+           <div class = "sentence">
+               <h1>復習しよう！</h1>
+               </div>
+<!-- コード貼り付け欄と音声出力らん -->
+              <div class="container mt-4">
+                <div class="row">
+                  <div class="col">
+                    <h2>コード貼り付け欄</h2>
+
+                      <!-- コード貼り付け -->
+                     <form action="/create" method="post" class="commentForm">
+                     <div id="editor" class="memo-space2" width=""></div>
+
+                  </div>
+
+                  <div class="col">
+                    <h2>音声出力欄</h2>
+                        <form action="/create" method="post" class="commentForm">
+                        <div id="editor" class="memo-space2" width=""></div>
+                        
+                   </div>
+                  </div>
+                 </div>
+               
+                   <!-- りつ：div class名を"form-group"から下記に変更 -->
+                      <div class="d-grid gap-2">
+                        <input type="submit" value="送信"  class="btn btn-secondary">
+                      </div>
+
+                    </div>
+
+              </div>
+
+
+
+     <!-- 音声出力JS -->
+     <script> 
+      const startBtn = document.querySelector('#start-btn');
+      const stopBtn = document.querySelector('#stop-btn');
+      const resultDiv = document.querySelector('#result-div');
+ 
+      SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+      let recognition = new SpeechRecognition();
+ 
+      recognition.lang = 'ja-JP';
+      recognition.interimResults = true;
+      recognition.continuous = true;
+ 
+      let finalTranscript = ''; // 確定した(黒の)認識結果
+ 
+      recognition.onresult = (event) => {
+        let interimTranscript = ''; // 暫定(灰色)の認識結果
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          let transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+             } else {
+                 interimTranscript = transcript;
+              }
+          }
+     
+           resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+      }
+ 
+      startBtn.onclick = () => {
+      recognition.start();
+      }
+      stopBtn.onclick = () => {
+      recognition.stop();
+      }
+  </script>
+<!-- ここまでが画面共有できた版 -->

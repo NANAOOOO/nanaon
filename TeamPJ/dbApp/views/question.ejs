@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+<head>
+  <title>問題画面</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/question.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- 四角い枠表示。意味あまりないのでデータを反映させるときに邪魔だったら消していただいて大丈夫です！ -->
+    <style>
+    .fakeimg {
+      height: 200px;
+      background:rgb(190, 190, 190);
+      border-radius: 20px;
+      margin-right: 15px;
+    }
+  </style>
+<!-- <script>
+  //色々頑張ったが、、字入れで
+  var question_id;
+  document.addEventListener('readystatechange', function(){
+   // completeに変化したときだけ実行
+   var mytable = document.getElementById("qtbl");
+   for (var i=0; i < mytable.rows[0].length; i++) {
+      mytable.rows[i].cells[0].onclick = clicked;
+      mytable.rows[i].cells[0].id = i + 1
+  }
+function clicked(e) {
+  question_id = e.target.id ;
+  console.log( question_id);
+}
+});     
+  //列をクリックすると発火するよ！
+</script> -->
+</head>
+
+
+<!-- ここのページbootstrap乱用しているのでclassいじらないでいただけるとありがたいです -->
+<body>
+
+    <!-- りつ："navbar bg-light" "container-fluid" "navbar-brand" "navbar-toggler""collapse navbar-collapse" "navbar-nav ms-auto" 消さないでください！-->
+    <nav class="navbar bg-light">
+
+      <!-- ブランドロゴ -->
+        <div class="container-fluid">
+          <span class="navbar-brand" href="question.ejs" >PRODUCTNAME</span>
+  
+           <!-- アイコン部分（入ってないけど） -->
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+           </button>
+     
+            <!--ハンバーガーメニュー  改善：右の四角もう少し大きく-->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                   <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                   <a class="nav-link" href="question.ejs">問題画面</a>
+                   <a class="nav-link" href="show.ejs">投稿一覧</a>
+               </div>
+           </diV>
+
+        </div>
+    </nav>
+
+
+<!-- 空白部分："p-5 bg-white text-white text-center"消さないでください！ -->
+<div class="p-5 bg-white text-white text-center">
+</div>
+
+
+<!-- 真ん中ら辺にある「問題画面」「タイムライン」の部分：下記そのままでお願いします！ -->
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">問題画面</a>
+  </li>
+  <li class="nav-item">
+    <!-- りつ：hrefあっているかな-->
+    <a class="nav-link" href="/show"><span>タイムライン</span></a>
+  </li>
+</ul>
+
+<!-- "container mt-5" "col-sm-4"のclass消さないでください！-->
+<div class="container mt-5">
+   
+    
+   
+   
+      
+          
+           <div class="fakeimg"></div>
+    
+  
+
+  <table class="table table-striped table-hover" id = qtbl>
+		
+    <!-- テーブルの一番上の行 -->
+    <thead>
+			<tr>
+			  <th scope="col">新着順</th>
+			  <th scope="col">問題文</th>
+			</tr>
+   </thead>
+
+   <!-- テーブルの2番目の行 -->
+		<tbody>
+			<tr>
+        <% questionsResult.forEach((item) => { %>
+			  <th scope="row" class="id" name="id"><%= item.question_id %></th>
+			  <td class="question" name="question"><%= item.question %></td>
+      </form>
+        <% }) %>
+			</tr>
+		
+    
+	  </table>
+<form action = "/startpost" method = "post" >
+<div class="form-item"> 
+  <p><input type="text" name = "questionnum" placeholder="問題番号を入力" >
+    <input type="text" name = "shareurl" placeholder="画面共有URLを入力" >
+  <input type="submit" value="送信">
+</p>
+</div>
+</form>
+</tbody>
+
+</body>
+</html>
+
