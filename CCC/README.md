@@ -1,10 +1,16 @@
 #　聴覚過敏対応MAP
 livesite：https://cocomakersmap.glitch.me
+
 code：https://glitch.com/edit/#!/cocomakersmap
+
 利用技術：html,css
+
 大会URL：https://ccc2022.code4japan.org/
+
 大会動画：https://www.youtube.com/live/Lh3CK4Jy8U8?feature=share
+
 受賞：AWS賞、salesforce賞
+
 PRtimesの記事：https://prtimes.jp/main/html/rd/p/000000052.000039198.html
 
 
