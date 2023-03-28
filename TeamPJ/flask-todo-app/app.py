@@ -25,8 +25,7 @@ def index():
     else:
         title = request.form.get('title')
         detail = request.form.get('detail')
-        due = request.form.get('due')
-        
+        due = request.form.get('due')    
         due = datetime.strptime(due, '%Y-%m-%d')
         new_post = Post(title=title, detail=detail, due=due)
         db.session.add(new_post)
@@ -44,7 +43,6 @@ def delete(id):
 @app.route('/detail/<int:id>')
 def read(id):
     post = Post.query.get(id)
-
     return render_template('detail.html', post=post)
 
 @app.route('/create')
@@ -60,7 +58,6 @@ def update(id):
         post.title = request.form.get('title')
         post.detail = request.form.get('detail')
         post.due = datetime.strptime(request.form.get('due'), '%Y-%m-%d')
-
         db.session.commit()
         return redirect('/')
 
