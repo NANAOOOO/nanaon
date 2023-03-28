@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fortune-telling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/telling.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/telling.js') }}">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">HOME</a>
+        </h1>
+        <nav class="nav">
+            <ul class="menu-group">
+              <li class="menu-item"><a href="/kokkyo">寄付する</a></li>
+              <form action="/telling" method="POST">
+              <li class="menu-item"><a type="submit" href="/telling">もう一度占う</a></li>
+            </form>
+            </ul>
+        </nav>
+    </header>
+<main>
+ <div class="snowFalling">
+    <div></div>
+    <div class = "titlebox">
+       
+    <h1 class="title">今日の運勢</h1>
+</div>
+<form action = "/telling" method="POST">
+    <input type = "text" name = "seiza">
+    <button type = "submit" >送信</button>
+</form>
+    <div class="wrapper">
+            <div class="zentai">
+            <div ><p id = 'zentai'>全体運</p>
+            <p><a class="answer" >{{ zentai }}/100</a></p>
+        </div>
+        </div>
+        <div class="kin">
+            <div ><p id = 'kin'>金運</p>
+            <p><a class="answer" >{{ kin }}/100</a></p>
+        </div>
+        </div>
+        <div  class="koi">
+            <div><p id ='koi' >恋愛運</p>
+            <p><a class="answer" >{{ koi }}/100</a>
+            </div>
+        </div>
+    </div>
+</main>
+ <footer>
+    <h1>
+        <a href="/">HOME</a>
+    </h1>
+</footer>
+</body>
+</html>

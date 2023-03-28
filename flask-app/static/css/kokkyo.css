@@ -1,0 +1,85 @@
+header {
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+ }
+
+header h1{
+    font-size: 30px;
+}
+.menu-group{
+    display: flex;
+    justify-content: space-between;
+ }
+.menu-item {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+  }
+
+h1 {
+    margin: 0; padding: 0;
+    font-size: 70px;
+ }
+ a {	
+    text-decoration: none;
+    color: #4b4b4b;
+ }
+
+.string{
+  color:red;
+  font-size: 20px;
+  padding-bottom:30px;
+}
+
+main{
+    font-size: 50px;
+	margin: 50vh auto 0;
+    padding-top: 80px;
+	transform: translateY(-50%); 
+	padding: 5px 30px;
+	background: rgba(3, 220, 249, 0.1);
+	color: #fff;
+	text-align: center;
+	width: auto;
+}
+  
+body{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 100vh;
+    background: #3397FF;
+    line-height: 1.5em;
+    justify-self: center;
+    align-self: center;
+    background-image: url("/static/img/sabaku.jpg");
+    padding: 15px 30px;
+    background-size: cover;               /* 全画面
+    background-attachment: fixed;         /* 固定 */
+    background-position: center center;   /* 縦横中央 */
+     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #d2ece3;
+    width:100vw;
+    box-sizing:border-box;
+    margin-left:calc(-50vw + 50%);
+    color: #201a1a;
+    width: 300px;
+}
+
+button{
+    background-color: rgb(58, 86, 190);
+    margin: auto;
+    margin-top:30px;
+	padding: 15px 30px;
+	color: #fff;
+	text-align: center;
+	width: 300px;
+    text-align: center;
+	width: auto;
+}
